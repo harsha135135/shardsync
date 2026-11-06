@@ -1,0 +1,934 @@
+{
+  "kind": "benchmark",
+  "recorded_at_unix": 1793988288,
+  "environment": {
+    "kernel": "6.12.76-linuxkit",
+    "machine": "aarch64",
+    "cpus_visible": 12,
+    "memory_total_bytes": 8321232896,
+    "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+    "git_revision": "a4de75e734c09c6005022b29289f26df17b2d5e1",
+    "git_dirty": false,
+    "build": "cargo build --release --locked (no optional features)",
+    "host_cpu": "Apple M4 Pro",
+    "host_os": "macOS 26.5.2",
+    "host_memory_bytes": "25769803776",
+    "container": "Docker 29.6.2, 12 CPUs, 8321232896 bytes memory, Docker Desktop (Linux VM on the host; fsync timing includes the hypervisor)",
+    "network": "loopback (sender and receiver on one machine)"
+  },
+  "filesystem": "ext2/ext3",
+  "settings": {
+    "repetitions": 5,
+    "upload_workers": 4,
+    "chunk_buffer_permits": 8,
+    "chunk_size_bytes": 4194304,
+    "interrupt_at_durable_fraction": 0.5,
+    "warm_up": "none; every run starts a fresh receiver, spool and receiver root"
+  },
+  "datasets": [
+    {
+      "dataset": {
+        "kind": "single",
+        "files": 1,
+        "bytes": 1073741824,
+        "seed": 11
+      },
+      "scenarios": {
+        "uninterrupted": {
+          "runs": [
+            {
+              "scenario": "uninterrupted",
+              "identical": true,
+              "total_bytes": 1073741824,
+              "prepare_ms": 2429.4452510002884,
+              "prepare_copy_ms": 1131,
+              "prepare_hash_ms": 1292,
+              "send_ms": 3003.563877005945,
+              "payload_mib_per_s": 340.9283244612591,
+              "preparation_to_publication_ms": 5433.025043996167,
+              "commit_to_published_ms": 1270,
+              "resent_bytes": 0,
+              "sender_cpu_seconds": 1.19,
+              "receiver_cpu_seconds": 3.05,
+              "sender_peak_rss_bytes": 24260608,
+              "receiver_peak_rss_bytes": 59650048,
+              "recovery": null,
+              "receiver_chunk_sync_micros": 507370,
+              "receiver_receipt_commit_micros": 194019,
+              "receiver_verify_micros": 1261702,
+              "receiver_publish_micros": 3067,
+              "receiver_chunk_writes": 256,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 0
+            },
+            {
+              "scenario": "uninterrupted",
+              "identical": true,
+              "total_bytes": 1073741824,
+              "prepare_ms": 1768.0721680007991,
+              "prepare_copy_ms": 488,
+              "prepare_hash_ms": 1274,
+              "send_ms": 2771.3462929968955,
+              "payload_mib_per_s": 369.49550569974446,
+              "preparation_to_publication_ms": 4539.427211006114,
+              "commit_to_published_ms": 1274,
+              "resent_bytes": 0,
+              "sender_cpu_seconds": 1.1600000000000001,
+              "receiver_cpu_seconds": 2.75,
+              "sender_peak_rss_bytes": 24563712,
+              "receiver_peak_rss_bytes": 63860736,
+              "recovery": null,
+              "receiver_chunk_sync_micros": 492459,
+              "receiver_receipt_commit_micros": 211005,
+              "receiver_verify_micros": 1254251,
+              "receiver_publish_micros": 4515,
+              "receiver_chunk_writes": 256,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 1
+            },
+            {
+              "scenario": "uninterrupted",
+              "identical": true,
+              "total_bytes": 1073741824,
+              "prepare_ms": 1992.9040010028984,
+              "prepare_copy_ms": 717,
+              "prepare_hash_ms": 1271,
+              "send_ms": 2787.0278760019573,
+              "payload_mib_per_s": 367.41649009587474,
+              "preparation_to_publication_ms": 4779.937961000542,
+              "commit_to_published_ms": 1278,
+              "resent_bytes": 0,
+              "sender_cpu_seconds": 1.16,
+              "receiver_cpu_seconds": 2.77,
+              "sender_peak_rss_bytes": 24383488,
+              "receiver_peak_rss_bytes": 61267968,
+              "recovery": null,
+              "receiver_chunk_sync_micros": 496858,
+              "receiver_receipt_commit_micros": 216764,
+              "receiver_verify_micros": 1252748,
+              "receiver_publish_micros": 2548,
+              "receiver_chunk_writes": 256,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 2
+            },
+            {
+              "scenario": "uninterrupted",
+              "identical": true,
+              "total_bytes": 1073741824,
+              "prepare_ms": 1666.5968340021209,
+              "prepare_copy_ms": 395,
+              "prepare_hash_ms": 1267,
+              "send_ms": 2740.7397930001025,
+              "payload_mib_per_s": 373.6217508189993,
+              "preparation_to_publication_ms": 4407.343044003937,
+              "commit_to_published_ms": 1271,
+              "resent_bytes": 0,
+              "sender_cpu_seconds": 1.15,
+              "receiver_cpu_seconds": 2.72,
+              "sender_peak_rss_bytes": 24342528,
+              "receiver_peak_rss_bytes": 61374464,
+              "recovery": null,
+              "receiver_chunk_sync_micros": 489076,
+              "receiver_receipt_commit_micros": 196131,
+              "receiver_verify_micros": 1252887,
+              "receiver_publish_micros": 4357,
+              "receiver_chunk_writes": 256,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 3
+            },
+            {
+              "scenario": "uninterrupted",
+              "identical": true,
+              "total_bytes": 1073741824,
+              "prepare_ms": 1732.753625998157,
+              "prepare_copy_ms": 460,
+              "prepare_hash_ms": 1268,
+              "send_ms": 2748.4657509994577,
+              "payload_mib_per_s": 372.57149725356066,
+              "preparation_to_publication_ms": 4481.2242109983345,
+              "commit_to_published_ms": 1264,
+              "resent_bytes": 0,
+              "sender_cpu_seconds": 1.1600000000000001,
+              "receiver_cpu_seconds": 2.73,
+              "sender_peak_rss_bytes": 24227840,
+              "receiver_peak_rss_bytes": 64106496,
+              "recovery": null,
+              "receiver_chunk_sync_micros": 488209,
+              "receiver_receipt_commit_micros": 210168,
+              "receiver_verify_micros": 1255492,
+              "receiver_publish_micros": 2513,
+              "receiver_chunk_writes": 256,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 4
+            }
+          ],
+          "summary": {
+            "payload_mib_per_s": {
+              "median": 369.49550569974446,
+              "min": 340.9283244612591,
+              "max": 373.6217508189993
+            },
+            "send_ms": {
+              "median": 2771.3462929968955,
+              "min": 2740.7397930001025,
+              "max": 3003.563877005945
+            },
+            "prepare_ms": {
+              "median": 1768.0721680007991,
+              "min": 1666.5968340021209,
+              "max": 2429.4452510002884
+            },
+            "preparation_to_publication_ms": {
+              "median": 4539.427211006114,
+              "min": 4407.343044003937,
+              "max": 5433.025043996167
+            },
+            "commit_to_published_ms": {
+              "median": 1271,
+              "min": 1264,
+              "max": 1278
+            },
+            "resent_bytes": {
+              "median": 0,
+              "min": 0,
+              "max": 0
+            },
+            "sender_cpu_seconds": {
+              "median": 1.1600000000000001,
+              "min": 1.15,
+              "max": 1.19
+            },
+            "receiver_cpu_seconds": {
+              "median": 2.75,
+              "min": 2.72,
+              "max": 3.05
+            },
+            "sender_peak_rss_bytes": {
+              "median": 24342528,
+              "min": 24227840,
+              "max": 24563712
+            },
+            "receiver_peak_rss_bytes": {
+              "median": 61374464,
+              "min": 59650048,
+              "max": 64106496
+            },
+            "receiver_chunk_sync_micros": {
+              "median": 492459,
+              "min": 488209,
+              "max": 507370
+            },
+            "receiver_receipt_commit_micros": {
+              "median": 210168,
+              "min": 194019,
+              "max": 216764
+            },
+            "receiver_verify_micros": {
+              "median": 1254251,
+              "min": 1252748,
+              "max": 1261702
+            },
+            "receiver_publish_micros": {
+              "median": 3067,
+              "min": 2513,
+              "max": 4515
+            }
+          }
+        },
+        "interrupted": {
+          "runs": [
+            {
+              "scenario": "interrupted",
+              "identical": true,
+              "total_bytes": 1073741824,
+              "prepare_ms": 1774.2367920000106,
+              "prepare_copy_ms": 502,
+              "prepare_hash_ms": 1267,
+              "send_ms": 3135.22537699464,
+              "payload_mib_per_s": 326.6112884623256,
+              "preparation_to_publication_ms": 4909.469626996724,
+              "commit_to_published_ms": 1269,
+              "resent_bytes": 16777216,
+              "sender_cpu_seconds": 1.18,
+              "receiver_cpu_seconds": 3.09,
+              "sender_peak_rss_bytes": 24338432,
+              "receiver_peak_rss_bytes": 64344064,
+              "recovery": {
+                "sessions_examined": 1,
+                "chunks_rehashed": 128,
+                "bytes_rehashed": 536870912,
+                "receipts_cleared": 0,
+                "duration_millis": 334
+              },
+              "receiver_chunk_sync_micros": 487570,
+              "receiver_receipt_commit_micros": 227519,
+              "receiver_verify_micros": 1254066,
+              "receiver_publish_micros": 5335,
+              "receiver_chunk_writes": 256,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 0
+            },
+            {
+              "scenario": "interrupted",
+              "identical": true,
+              "total_bytes": 1073741824,
+              "prepare_ms": 1737.4620010014041,
+              "prepare_copy_ms": 454,
+              "prepare_hash_ms": 1278,
+              "send_ms": 3096.724210001412,
+              "payload_mib_per_s": 330.6720038848836,
+              "preparation_to_publication_ms": 4834.192378002626,
+              "commit_to_published_ms": 1266,
+              "resent_bytes": 12582912,
+              "sender_cpu_seconds": 1.1600000000000001,
+              "receiver_cpu_seconds": 3.06,
+              "sender_peak_rss_bytes": 24408064,
+              "receiver_peak_rss_bytes": 66715648,
+              "recovery": {
+                "sessions_examined": 1,
+                "chunks_rehashed": 134,
+                "bytes_rehashed": 562036736,
+                "receipts_cleared": 0,
+                "duration_millis": 347
+              },
+              "receiver_chunk_sync_micros": 490730,
+              "receiver_receipt_commit_micros": 185188,
+              "receiver_verify_micros": 1259252,
+              "receiver_publish_micros": 4206,
+              "receiver_chunk_writes": 256,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 1
+            },
+            {
+              "scenario": "interrupted",
+              "identical": true,
+              "total_bytes": 1073741824,
+              "prepare_ms": 1712.5286259979475,
+              "prepare_copy_ms": 425,
+              "prepare_hash_ms": 1282,
+              "send_ms": 3229.5103770011337,
+              "payload_mib_per_s": 317.07592807020745,
+              "preparation_to_publication_ms": 4942.046419004328,
+              "commit_to_published_ms": 1365,
+              "resent_bytes": 16777216,
+              "sender_cpu_seconds": 1.17,
+              "receiver_cpu_seconds": 3.0999999999999996,
+              "sender_peak_rss_bytes": 24260608,
+              "receiver_peak_rss_bytes": 65867776,
+              "recovery": {
+                "sessions_examined": 1,
+                "chunks_rehashed": 135,
+                "bytes_rehashed": 566231040,
+                "receipts_cleared": 0,
+                "duration_millis": 350
+              },
+              "receiver_chunk_sync_micros": 498507,
+              "receiver_receipt_commit_micros": 197516,
+              "receiver_verify_micros": 1262242,
+              "receiver_publish_micros": 3375,
+              "receiver_chunk_writes": 256,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 2
+            },
+            {
+              "scenario": "interrupted",
+              "identical": true,
+              "total_bytes": 1073741824,
+              "prepare_ms": 2061.49600000208,
+              "prepare_copy_ms": 764,
+              "prepare_hash_ms": 1291,
+              "send_ms": 3111.8237099944963,
+              "payload_mib_per_s": 329.06748435367217,
+              "preparation_to_publication_ms": 5173.328794000554,
+              "commit_to_published_ms": 1270,
+              "resent_bytes": 16777216,
+              "sender_cpu_seconds": 1.1800000000000002,
+              "receiver_cpu_seconds": 3.07,
+              "sender_peak_rss_bytes": 24535040,
+              "receiver_peak_rss_bytes": 63348736,
+              "recovery": {
+                "sessions_examined": 1,
+                "chunks_rehashed": 132,
+                "bytes_rehashed": 553648128,
+                "receipts_cleared": 0,
+                "duration_millis": 341
+              },
+              "receiver_chunk_sync_micros": 477599,
+              "receiver_receipt_commit_micros": 204567,
+              "receiver_verify_micros": 1256776,
+              "receiver_publish_micros": 5199,
+              "receiver_chunk_writes": 256,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 3
+            },
+            {
+              "scenario": "interrupted",
+              "identical": true,
+              "total_bytes": 1073741824,
+              "prepare_ms": 1834.372708995943,
+              "prepare_copy_ms": 545,
+              "prepare_hash_ms": 1282,
+              "send_ms": 3195.048460001999,
+              "payload_mib_per_s": 320.4959213668263,
+              "preparation_to_publication_ms": 5029.427335997752,
+              "commit_to_published_ms": 1363,
+              "resent_bytes": 16777216,
+              "sender_cpu_seconds": 1.17,
+              "receiver_cpu_seconds": 3.07,
+              "sender_peak_rss_bytes": 24449024,
+              "receiver_peak_rss_bytes": 60760064,
+              "recovery": {
+                "sessions_examined": 1,
+                "chunks_rehashed": 136,
+                "bytes_rehashed": 570425344,
+                "receipts_cleared": 0,
+                "duration_millis": 355
+              },
+              "receiver_chunk_sync_micros": 469648,
+              "receiver_receipt_commit_micros": 197715,
+              "receiver_verify_micros": 1253666,
+              "receiver_publish_micros": 3242,
+              "receiver_chunk_writes": 256,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 4
+            }
+          ],
+          "summary": {
+            "payload_mib_per_s": {
+              "median": 326.6112884623256,
+              "min": 317.07592807020745,
+              "max": 330.6720038848836
+            },
+            "send_ms": {
+              "median": 3135.22537699464,
+              "min": 3096.724210001412,
+              "max": 3229.5103770011337
+            },
+            "prepare_ms": {
+              "median": 1774.2367920000106,
+              "min": 1712.5286259979475,
+              "max": 2061.49600000208
+            },
+            "preparation_to_publication_ms": {
+              "median": 4942.046419004328,
+              "min": 4834.192378002626,
+              "max": 5173.328794000554
+            },
+            "commit_to_published_ms": {
+              "median": 1270,
+              "min": 1266,
+              "max": 1365
+            },
+            "resent_bytes": {
+              "median": 16777216,
+              "min": 12582912,
+              "max": 16777216
+            },
+            "sender_cpu_seconds": {
+              "median": 1.17,
+              "min": 1.1600000000000001,
+              "max": 1.1800000000000002
+            },
+            "receiver_cpu_seconds": {
+              "median": 3.07,
+              "min": 3.06,
+              "max": 3.0999999999999996
+            },
+            "sender_peak_rss_bytes": {
+              "median": 24408064,
+              "min": 24260608,
+              "max": 24535040
+            },
+            "receiver_peak_rss_bytes": {
+              "median": 64344064,
+              "min": 60760064,
+              "max": 66715648
+            },
+            "receiver_chunk_sync_micros": {
+              "median": 487570,
+              "min": 469648,
+              "max": 498507
+            },
+            "receiver_receipt_commit_micros": {
+              "median": 197715,
+              "min": 185188,
+              "max": 227519
+            },
+            "receiver_verify_micros": {
+              "median": 1256776,
+              "min": 1253666,
+              "max": 1262242
+            },
+            "receiver_publish_micros": {
+              "median": 4206,
+              "min": 3242,
+              "max": 5335
+            },
+            "recovery_bytes_rehashed": {
+              "median": 562036736,
+              "min": 536870912,
+              "max": 570425344
+            },
+            "recovery_duration_millis": {
+              "median": 347,
+              "min": 334,
+              "max": 355
+            }
+          }
+        }
+      }
+    },
+    {
+      "dataset": {
+        "kind": "tree",
+        "files": 1995,
+        "bytes": 535178706,
+        "seed": 11
+      },
+      "scenarios": {
+        "uninterrupted": {
+          "runs": [
+            {
+              "scenario": "uninterrupted",
+              "identical": true,
+              "total_bytes": 535178706,
+              "prepare_ms": 2114.2940429999726,
+              "prepare_copy_ms": 1382,
+              "prepare_hash_ms": 717,
+              "send_ms": 4293.3527100030915,
+              "payload_mib_per_s": 118.87823364956287,
+              "preparation_to_publication_ms": 6407.652794005116,
+              "commit_to_published_ms": 840,
+              "resent_bytes": 0,
+              "sender_cpu_seconds": 0.75,
+              "receiver_cpu_seconds": 1.87,
+              "sender_peak_rss_bytes": 28442624,
+              "receiver_peak_rss_bytes": 52609024,
+              "recovery": null,
+              "receiver_chunk_sync_micros": 1257216,
+              "receiver_receipt_commit_micros": 919952,
+              "receiver_verify_micros": 651933,
+              "receiver_publish_micros": 111927,
+              "receiver_chunk_writes": 2021,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 0
+            },
+            {
+              "scenario": "uninterrupted",
+              "identical": true,
+              "total_bytes": 535178706,
+              "prepare_ms": 2595.7912929952727,
+              "prepare_copy_ms": 1875,
+              "prepare_hash_ms": 707,
+              "send_ms": 4297.69141900033,
+              "payload_mib_per_s": 118.75822083067344,
+              "preparation_to_publication_ms": 6893.490210997697,
+              "commit_to_published_ms": 847,
+              "resent_bytes": 0,
+              "sender_cpu_seconds": 0.75,
+              "receiver_cpu_seconds": 1.88,
+              "sender_peak_rss_bytes": 26603520,
+              "receiver_peak_rss_bytes": 50831360,
+              "recovery": null,
+              "receiver_chunk_sync_micros": 1245661,
+              "receiver_receipt_commit_micros": 929937,
+              "receiver_verify_micros": 648097,
+              "receiver_publish_micros": 120751,
+              "receiver_chunk_writes": 2021,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 1
+            },
+            {
+              "scenario": "uninterrupted",
+              "identical": true,
+              "total_bytes": 535178706,
+              "prepare_ms": 2590.1595010000165,
+              "prepare_copy_ms": 1858,
+              "prepare_hash_ms": 715,
+              "send_ms": 4557.0567100003245,
+              "payload_mib_per_s": 111.99908605036761,
+              "preparation_to_publication_ms": 7147.2236280023935,
+              "commit_to_published_ms": 852,
+              "resent_bytes": 0,
+              "sender_cpu_seconds": 0.76,
+              "receiver_cpu_seconds": 1.89,
+              "sender_peak_rss_bytes": 26533888,
+              "receiver_peak_rss_bytes": 51109888,
+              "recovery": null,
+              "receiver_chunk_sync_micros": 1290735,
+              "receiver_receipt_commit_micros": 1035223,
+              "receiver_verify_micros": 643992,
+              "receiver_publish_micros": 113865,
+              "receiver_chunk_writes": 2021,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 2
+            },
+            {
+              "scenario": "uninterrupted",
+              "identical": true,
+              "total_bytes": 535178706,
+              "prepare_ms": 2502.36820900318,
+              "prepare_copy_ms": 1780,
+              "prepare_hash_ms": 708,
+              "send_ms": 4325.1920440015965,
+              "payload_mib_per_s": 118.00312712300529,
+              "preparation_to_publication_ms": 6827.566961001139,
+              "commit_to_published_ms": 826,
+              "resent_bytes": 0,
+              "sender_cpu_seconds": 0.75,
+              "receiver_cpu_seconds": 1.89,
+              "sender_peak_rss_bytes": 27049984,
+              "receiver_peak_rss_bytes": 53276672,
+              "recovery": null,
+              "receiver_chunk_sync_micros": 1256283,
+              "receiver_receipt_commit_micros": 940328,
+              "receiver_verify_micros": 650712,
+              "receiver_publish_micros": 124038,
+              "receiver_chunk_writes": 2021,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 3
+            },
+            {
+              "scenario": "uninterrupted",
+              "identical": true,
+              "total_bytes": 535178706,
+              "prepare_ms": 2680.007041999488,
+              "prepare_copy_ms": 1955,
+              "prepare_hash_ms": 710,
+              "send_ms": 4221.196209997288,
+              "payload_mib_per_s": 120.91032048947551,
+              "preparation_to_publication_ms": 6901.210001997242,
+              "commit_to_published_ms": 850,
+              "resent_bytes": 0,
+              "sender_cpu_seconds": 0.74,
+              "receiver_cpu_seconds": 1.87,
+              "sender_peak_rss_bytes": 26091520,
+              "receiver_peak_rss_bytes": 51724288,
+              "recovery": null,
+              "receiver_chunk_sync_micros": 1190030,
+              "receiver_receipt_commit_micros": 863631,
+              "receiver_verify_micros": 643728,
+              "receiver_publish_micros": 112933,
+              "receiver_chunk_writes": 2021,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 4
+            }
+          ],
+          "summary": {
+            "payload_mib_per_s": {
+              "median": 118.75822083067344,
+              "min": 111.99908605036761,
+              "max": 120.91032048947551
+            },
+            "send_ms": {
+              "median": 4297.69141900033,
+              "min": 4221.196209997288,
+              "max": 4557.0567100003245
+            },
+            "prepare_ms": {
+              "median": 2590.1595010000165,
+              "min": 2114.2940429999726,
+              "max": 2680.007041999488
+            },
+            "preparation_to_publication_ms": {
+              "median": 6893.490210997697,
+              "min": 6407.652794005116,
+              "max": 7147.2236280023935
+            },
+            "commit_to_published_ms": {
+              "median": 847,
+              "min": 826,
+              "max": 852
+            },
+            "resent_bytes": {
+              "median": 0,
+              "min": 0,
+              "max": 0
+            },
+            "sender_cpu_seconds": {
+              "median": 0.75,
+              "min": 0.74,
+              "max": 0.76
+            },
+            "receiver_cpu_seconds": {
+              "median": 1.88,
+              "min": 1.87,
+              "max": 1.89
+            },
+            "sender_peak_rss_bytes": {
+              "median": 26603520,
+              "min": 26091520,
+              "max": 28442624
+            },
+            "receiver_peak_rss_bytes": {
+              "median": 51724288,
+              "min": 50831360,
+              "max": 53276672
+            },
+            "receiver_chunk_sync_micros": {
+              "median": 1256283,
+              "min": 1190030,
+              "max": 1290735
+            },
+            "receiver_receipt_commit_micros": {
+              "median": 929937,
+              "min": 863631,
+              "max": 1035223
+            },
+            "receiver_verify_micros": {
+              "median": 648097,
+              "min": 643728,
+              "max": 651933
+            },
+            "receiver_publish_micros": {
+              "median": 113865,
+              "min": 111927,
+              "max": 124038
+            }
+          }
+        },
+        "interrupted": {
+          "runs": [
+            {
+              "scenario": "interrupted",
+              "identical": true,
+              "total_bytes": 535178706,
+              "prepare_ms": 2485.877001003246,
+              "prepare_copy_ms": 1762,
+              "prepare_hash_ms": 711,
+              "send_ms": 4549.118461000035,
+              "payload_mib_per_s": 112.19452537350128,
+              "preparation_to_publication_ms": 7035.001670003112,
+              "commit_to_published_ms": 839,
+              "resent_bytes": 1070216,
+              "sender_cpu_seconds": 0.75,
+              "receiver_cpu_seconds": 2.11,
+              "sender_peak_rss_bytes": 26890240,
+              "receiver_peak_rss_bytes": 59314176,
+              "recovery": {
+                "sessions_examined": 1,
+                "chunks_rehashed": 733,
+                "bytes_rehashed": 283389468,
+                "receipts_cleared": 0,
+                "duration_millis": 274
+              },
+              "receiver_chunk_sync_micros": 1231886,
+              "receiver_receipt_commit_micros": 913479,
+              "receiver_verify_micros": 654673,
+              "receiver_publish_micros": 116217,
+              "receiver_chunk_writes": 2021,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 0
+            },
+            {
+              "scenario": "interrupted",
+              "identical": true,
+              "total_bytes": 535178706,
+              "prepare_ms": 2509.0644599986263,
+              "prepare_copy_ms": 1773,
+              "prepare_hash_ms": 720,
+              "send_ms": 4494.787709998491,
+              "payload_mib_per_s": 113.55067681269931,
+              "preparation_to_publication_ms": 7003.857962001348,
+              "commit_to_published_ms": 862,
+              "resent_bytes": 729858,
+              "sender_cpu_seconds": 0.75,
+              "receiver_cpu_seconds": 2.08,
+              "sender_peak_rss_bytes": 26005504,
+              "receiver_peak_rss_bytes": 56217600,
+              "recovery": {
+                "sessions_examined": 1,
+                "chunks_rehashed": 719,
+                "bytes_rehashed": 269633872,
+                "receipts_cleared": 0,
+                "duration_millis": 269
+              },
+              "receiver_chunk_sync_micros": 1188339,
+              "receiver_receipt_commit_micros": 867806,
+              "receiver_verify_micros": 651259,
+              "receiver_publish_micros": 121593,
+              "receiver_chunk_writes": 2021,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 1
+            },
+            {
+              "scenario": "interrupted",
+              "identical": true,
+              "total_bytes": 535178706,
+              "prepare_ms": 2635.4276679994655,
+              "prepare_copy_ms": 1906,
+              "prepare_hash_ms": 714,
+              "send_ms": 4541.939251997974,
+              "payload_mib_per_s": 112.37186547028682,
+              "preparation_to_publication_ms": 7177.3749200001475,
+              "commit_to_published_ms": 857,
+              "resent_bytes": 4527299,
+              "sender_cpu_seconds": 0.76,
+              "receiver_cpu_seconds": 2.09,
+              "sender_peak_rss_bytes": 26112000,
+              "receiver_peak_rss_bytes": 56938496,
+              "recovery": {
+                "sessions_examined": 1,
+                "chunks_rehashed": 727,
+                "bytes_rehashed": 271316315,
+                "receipts_cleared": 0,
+                "duration_millis": 286
+              },
+              "receiver_chunk_sync_micros": 1179113,
+              "receiver_receipt_commit_micros": 862928,
+              "receiver_verify_micros": 653469,
+              "receiver_publish_micros": 120366,
+              "receiver_chunk_writes": 2021,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 2
+            },
+            {
+              "scenario": "interrupted",
+              "identical": true,
+              "total_bytes": 535178706,
+              "prepare_ms": 2675.0289170013275,
+              "prepare_copy_ms": 1947,
+              "prepare_hash_ms": 713,
+              "send_ms": 4499.8200020054355,
+              "payload_mib_per_s": 113.42368947474955,
+              "preparation_to_publication_ms": 7174.86775299767,
+              "commit_to_published_ms": 823,
+              "resent_bytes": 7718947,
+              "sender_cpu_seconds": 0.76,
+              "receiver_cpu_seconds": 2.1,
+              "sender_peak_rss_bytes": 30248960,
+              "receiver_peak_rss_bytes": 61816832,
+              "recovery": {
+                "sessions_examined": 1,
+                "chunks_rehashed": 730,
+                "bytes_rehashed": 275843614,
+                "receipts_cleared": 0,
+                "duration_millis": 288
+              },
+              "receiver_chunk_sync_micros": 1190176,
+              "receiver_receipt_commit_micros": 893224,
+              "receiver_verify_micros": 654664,
+              "receiver_publish_micros": 115769,
+              "receiver_chunk_writes": 2021,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 3
+            },
+            {
+              "scenario": "interrupted",
+              "identical": true,
+              "total_bytes": 535178706,
+              "prepare_ms": 2597.5055010057986,
+              "prepare_copy_ms": 1867,
+              "prepare_hash_ms": 716,
+              "send_ms": 4497.761501996138,
+              "payload_mib_per_s": 113.47560033434821,
+              "preparation_to_publication_ms": 7095.272753002064,
+              "commit_to_published_ms": 837,
+              "resent_bytes": 1001944,
+              "sender_cpu_seconds": 0.75,
+              "receiver_cpu_seconds": 2.07,
+              "sender_peak_rss_bytes": 26255360,
+              "receiver_peak_rss_bytes": 59957248,
+              "recovery": {
+                "sessions_examined": 1,
+                "chunks_rehashed": 722,
+                "bytes_rehashed": 270220055,
+                "receipts_cleared": 0,
+                "duration_millis": 296
+              },
+              "receiver_chunk_sync_micros": 1178547,
+              "receiver_receipt_commit_micros": 885359,
+              "receiver_verify_micros": 650712,
+              "receiver_publish_micros": 110011,
+              "receiver_chunk_writes": 2021,
+              "receiver_duplicate_chunk_requests": 0,
+              "repetition": 4
+            }
+          ],
+          "summary": {
+            "payload_mib_per_s": {
+              "median": 113.42368947474955,
+              "min": 112.19452537350128,
+              "max": 113.55067681269931
+            },
+            "send_ms": {
+              "median": 4499.8200020054355,
+              "min": 4494.787709998491,
+              "max": 4549.118461000035
+            },
+            "prepare_ms": {
+              "median": 2597.5055010057986,
+              "min": 2485.877001003246,
+              "max": 2675.0289170013275
+            },
+            "preparation_to_publication_ms": {
+              "median": 7095.272753002064,
+              "min": 7003.857962001348,
+              "max": 7177.3749200001475
+            },
+            "commit_to_published_ms": {
+              "median": 839,
+              "min": 823,
+              "max": 862
+            },
+            "resent_bytes": {
+              "median": 1070216,
+              "min": 729858,
+              "max": 7718947
+            },
+            "sender_cpu_seconds": {
+              "median": 0.75,
+              "min": 0.75,
+              "max": 0.76
+            },
+            "receiver_cpu_seconds": {
+              "median": 2.09,
+              "min": 2.07,
+              "max": 2.11
+            },
+            "sender_peak_rss_bytes": {
+              "median": 26255360,
+              "min": 26005504,
+              "max": 30248960
+            },
+            "receiver_peak_rss_bytes": {
+              "median": 59314176,
+              "min": 56217600,
+              "max": 61816832
+            },
+            "receiver_chunk_sync_micros": {
+              "median": 1188339,
+              "min": 1178547,
+              "max": 1231886
+            },
+            "receiver_receipt_commit_micros": {
+              "median": 885359,
+              "min": 862928,
+              "max": 913479
+            },
+            "receiver_verify_micros": {
+              "median": 653469,
+              "min": 650712,
+              "max": 654673
+            },
+            "receiver_publish_micros": {
+              "median": 116217,
+              "min": 110011,
+              "max": 121593
+            },
+            "recovery_bytes_rehashed": {
+              "median": 271316315,
+              "min": 269633872,
+              "max": 283389468
+            },
+            "recovery_duration_millis": {
+              "median": 286,
+              "min": 269,
+              "max": 296
+            }
+          }
+        }
+      }
+    }
+  ]
+}

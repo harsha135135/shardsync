@@ -1,0 +1,70 @@
+{
+  "kind": "demo",
+  "recorded_at_unix": 1793988502,
+  "environment": {
+    "kernel": "6.12.76-linuxkit",
+    "machine": "aarch64",
+    "cpus_visible": 12,
+    "memory_total_bytes": 8321232896,
+    "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+    "git_revision": "a4de75e734c09c6005022b29289f26df17b2d5e1",
+    "git_dirty": false,
+    "build": "cargo build --release --locked (no optional features)",
+    "host_cpu": "Apple M4 Pro",
+    "host_os": "macOS 26.5.2",
+    "host_memory_bytes": "25769803776",
+    "container": "Docker 29.6.2, 12 CPUs, 8321232896 bytes memory, Docker Desktop (Linux VM on the host; fsync timing includes the hypervisor)",
+    "network": "loopback (sender and receiver on one machine)"
+  },
+  "filesystem": "ext2/ext3",
+  "durability_profile": "validated",
+  "dataset": {
+    "kind": "tree",
+    "files": 1995,
+    "bytes": 1046487843,
+    "seed": 7
+  },
+  "interrupted_at_durable_fraction": 0.5107872848934758,
+  "identical": true,
+  "total_bytes": 1046487843,
+  "resent_bytes": 1085242,
+  "attempted_bytes_all_runs": 1047573085,
+  "prepare_ms": 2971.382834999531,
+  "first_send_until_kill_ms": 2371.4260429987917,
+  "receiver_restart_ms": 452.4582080048276,
+  "resume_until_published_ms": 3051.704625999264,
+  "commit_to_published_ms": 1372,
+  "preparation_to_publication_ms": 8849.063795998518,
+  "recovery": {
+    "sessions_examined": 1,
+    "chunks_rehashed": 1000,
+    "bytes_rehashed": 534532684,
+    "receipts_cleared": 0,
+    "duration_millis": 447
+  },
+  "receiver_counters_after_restart": {
+    "chunk_writes": 1038,
+    "duplicate_chunk_requests": 0,
+    "chunk_sync_micros": 697104,
+    "receipt_commit_micros": 480395,
+    "verify_micros": 1244536,
+    "publish_micros": 103554,
+    "buffer_high_water": 4
+  },
+  "receiver_peak_rss_bytes": {
+    "before_kill": 66064384,
+    "after_restart": 61276160
+  },
+  "receiver_cpu_seconds": {
+    "before_kill": 0.98,
+    "after_restart": 2.54
+  },
+  "sender_peak_rss_bytes": {
+    "first": 27955200,
+    "second": 30412800
+  },
+  "sender_cpu_seconds": {
+    "first": 0.65,
+    "second": 0.62
+  }
+}

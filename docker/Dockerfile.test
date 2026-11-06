@@ -1,0 +1,7 @@
+# Linux test environment for ShardSync: the pinned toolchain plus the tools the tests and
+# benchmarks use (GNU time for peak memory, e2fsprogs for the small ext4 out-of-space test).
+FROM rust:1.99.1-bookworm
+RUN rustup component add rustfmt clippy \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends time e2fsprogs \
+    && rm -rf /var/lib/apt/lists/*

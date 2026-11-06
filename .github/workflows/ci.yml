@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # The test harness must not fall back to the development (unvalidated) profile.
+      SHARDSYNC_REQUIRE_VALIDATED: "1"
+      CARGO_TERM_COLOR: never
+    steps:
+      - uses: actions/checkout@v4
+
+      # Same version as rust-toolchain.toml, installed explicitly so CI never depends on auto-install.
+      - name: Toolchain
+        run: rustup toolchain install 1.99.1 --profile minimal --component rustfmt,clippy
+
+      - name: Test filesystem
+        run: |
+          mkdir -p "$RUNNER_TEMP/shardsync"
+          echo "test filesystem: $(stat -f -c %T "$RUNNER_TEMP/shardsync")"
+          echo "SHARDSYNC_TEST_ROOT=$RUNNER_TEMP/shardsync" >> "$GITHUB_ENV"
+
+      # A real out-of-space test needs a small filesystem of the supported type.
+      - name: Small ext4 filesystem
+        run: |
+          truncate -s 256M "$RUNNER_TEMP/small.img"
+          mkfs.ext4 -q -F "$RUNNER_TEMP/small.img"
+          sudo mkdir -p /mnt/small
+          sudo mount -o loop "$RUNNER_TEMP/small.img" /mnt/small
+          sudo chown "$USER" /mnt/small
+          echo "SHARDSYNC_SMALL_FS=/mnt/small" >> "$GITHUB_ENV"
+
+      - name: Format
+        run: cargo fmt --check
+
+      - name: Lint
+        run: cargo clippy --locked --all-targets --all-features -- -D warnings
+
+      - name: Test (debug)
+        run: cargo test --locked --features fault-injection
+
+      # Checked arithmetic and error paths must behave the same in optimized builds.
+      - name: Test (release)
+        run: cargo test --locked --release --features fault-injection

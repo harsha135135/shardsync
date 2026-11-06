@@ -52,8 +52,10 @@ def environment_record() -> dict:
     revision = subprocess.run(
         ["git", "-c", f"safe.directory={REPO}", "rev-parse", "HEAD"],
         cwd=REPO, text=True, capture_output=True).stdout.strip() or "uncommitted"
+    # Only tracked changes make a build differ from its revision; new result files do not.
     dirty = subprocess.run(
-        ["git", "-c", f"safe.directory={REPO}", "status", "--porcelain"],
+        ["git", "-c", f"safe.directory={REPO}", "status", "--porcelain",
+         "--untracked-files=no"],
         cwd=REPO, text=True, capture_output=True).stdout.strip() != ""
     return {
         "kernel": platform.release(),

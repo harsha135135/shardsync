@@ -95,6 +95,12 @@ impl IntoResponse for ApiError {
                 .headers_mut()
                 .insert(header::RETRY_AFTER, HeaderValue::from(seconds));
         }
+        // An error may leave part of the request body unread (401, 413, 429, a stalled body).
+        // Closing the connection, and saying so, stops a client from reusing a connection
+        // whose next request would be read from the middle of the previous body.
+        response
+            .headers_mut()
+            .insert(header::CONNECTION, HeaderValue::from_static("close"));
         response
     }
 }

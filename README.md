@@ -128,7 +128,7 @@ The real out-of-space test fills a 256 MiB loop-mounted ext4 filesystem after ad
 
 ## Measurements
 
-Every number below comes from a file in [benchmarks/results/](benchmarks/results/), written by the scripts at revision `a4de75e`, using a release build without optional features. The Rust sources are unchanged since `cb3d883`.
+Every number below comes from a file in [benchmarks/results/](benchmarks/results/), written by the scripts at revision `a4de75e`, using a release build without optional features. The Rust sources at that revision are unchanged since `cb3d883`. Later commits change only error responses, which now close the connection.
 
 **Environment:**
 - Apple M4 Pro, macOS 26.5.2, 24 GiB.

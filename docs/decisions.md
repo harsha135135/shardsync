@@ -20,6 +20,7 @@ The [specification](specification.md) (version 1.1) is the design contract. This
 3. **Early rejections and closed connections.**
    - **Drained:** before answering 400, 404 or 409 without reading the body, the receiver reads and discards at most one chunk (4 MiB) or one manifest (16 MiB). An HTTP/1.1 client that is still uploading then receives the response instead of a reset connection.
    - **Never read:** a 401 (unauthenticated), 413 (oversized) or 429 (backpressure) rejection does not read the body. Such a response may reach a client as a closed connection.
+   - **Connection: close:** every error response carries `Connection: close`, and the receiver closes the connection after sending it. A client therefore never reuses a connection whose request body may be partly unread. Without this, a pooled connection reused after an early 413 failed intermittently (`concurrency::body_limit_without_content_length` in CI).
    - **Effect on the sender:** it never sends an oversized body and retries transport errors, so this matters only for misbehaving clients.
    - Tests: `single_file::bad_indexes_are_400_and_oversized_bodies_413`, `manifest::invalid_manifests_are_rejected_without_creating_sessions`.
 4. **Manifest file IDs.** Each file record carries an explicit `id` field. §5's field table lists "stable numeric IDs" without naming the field. IDs must be sequential from 0, in array order.
